@@ -9,6 +9,7 @@ import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.MessageContext;
 
 import com.ipartek.peliculas.Pelicula;
+import com.ipartek.peliculas.PeliculaColeccion;
 import com.ipartek.peliculas.PeliculaMensaje;
 import com.ipartek.peliculas.PeliculaServiceWSImp;
 import com.ipartek.peliculas.Peliculasservice;
@@ -42,6 +43,7 @@ public class Main {
 
 		}
 
+		PeliculaColeccion coleccion = clientesoap.obtenerListado();
 	}
 
 }
