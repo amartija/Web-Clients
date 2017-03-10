@@ -30,9 +30,17 @@ public class Main {
 		// introduzco los datos en el encabezado de la peticion
 		requestContext.put(MessageContext.HTTP_REQUEST_HEADERS, requestHeaders);
 
-		PeliculaMensaje respuesta = clientesoap.obtenerporid(3);
-		Pelicula pelicula = respuesta.getPelicula();
-		System.out.println(pelicula.getTitulo());
+		PeliculaMensaje respuesta = clientesoap.obtenerporid(-1);
+
+		if (respuesta.getPelicula() == null) {
+
+			System.out.println(respuesta.getMensaje());
+		} else {
+
+			Pelicula pelicula = respuesta.getPelicula();
+			System.out.println(pelicula.getTitulo());
+
+		}
 
 	}
 
