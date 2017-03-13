@@ -37,35 +37,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ObtenerListado }
-     * 
-     */
-    public ObtenerListado createObtenerListado() {
-        return new ObtenerListado();
-    }
-
-    /**
      * Create an instance of {@link PeliculaColeccion }
      * 
      */
     public PeliculaColeccion createPeliculaColeccion() {
         return new PeliculaColeccion();
-    }
-
-    /**
-     * Create an instance of {@link Genero }
-     * 
-     */
-    public Genero createGenero() {
-        return new Genero();
-    }
-
-    /**
-     * Create an instance of {@link PeliculaMensaje }
-     * 
-     */
-    public PeliculaMensaje createPeliculaMensaje() {
-        return new PeliculaMensaje();
     }
 
     /**
@@ -77,14 +53,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Pelicula }
-     * 
-     */
-    public Pelicula createPelicula() {
-        return new Pelicula();
-    }
-
-    /**
      * Create an instance of {@link ObtenerListadoResponse }
      * 
      */
@@ -93,11 +61,43 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Genero }
+     * 
+     */
+    public Genero createGenero() {
+        return new Genero();
+    }
+
+    /**
      * Create an instance of {@link ObtenerporidResponse }
      * 
      */
     public ObtenerporidResponse createObtenerporidResponse() {
         return new ObtenerporidResponse();
+    }
+
+    /**
+     * Create an instance of {@link PeliculaMensaje }
+     * 
+     */
+    public PeliculaMensaje createPeliculaMensaje() {
+        return new PeliculaMensaje();
+    }
+
+    /**
+     * Create an instance of {@link ObtenerListado }
+     * 
+     */
+    public ObtenerListado createObtenerListado() {
+        return new ObtenerListado();
+    }
+
+    /**
+     * Create an instance of {@link Pelicula }
+     * 
+     */
+    public Pelicula createPelicula() {
+        return new Pelicula();
     }
 
     /**

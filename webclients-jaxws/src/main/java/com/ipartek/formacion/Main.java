@@ -26,12 +26,12 @@ public class Main {
 
 		// me genero la estructura necesaria para enviar los datos
 		Map<String, List<String>> requestHeaders = new HashMap<String, List<String>>();
-		requestHeaders.put("sessionid", Collections.singletonList("ipsession"));
+		requestHeaders.put("sessionId", Collections.singletonList("ipsession"));
 
 		// introduzco los datos en el encabezado de la peticion
 		requestContext.put(MessageContext.HTTP_REQUEST_HEADERS, requestHeaders);
 
-		PeliculaMensaje respuesta = clientesoap.obtenerporid(-1);
+		PeliculaMensaje respuesta = clientesoap.obtenerporid(1);
 
 		if (respuesta.getPelicula() == null) {
 
@@ -43,7 +43,32 @@ public class Main {
 
 		}
 
-		PeliculaColeccion coleccion = clientesoap.obtenerListado();
+		Peliculasservice cliente1 = new Peliculasservice();
+		PeliculaServiceWSImp clientesoap1 = cliente1.getPeliculaServiceWSImpPort();
+
+		// capturo contexto de la peticion
+		Map<String, Object> requestContext1 = ((BindingProvider) clientesoap1).getRequestContext();
+
+		Map<String, List<String>> requestHeaders1 = new HashMap<String, List<String>>();
+		requestHeaders1.put("usuario", Collections.singletonList("usec<xczxcr"));
+		requestHeaders1.put("password", Collections.singletonList("pass"));
+
+		requestContext1.put(MessageContext.HTTP_REQUEST_HEADERS, requestHeaders1);
+
+		PeliculaColeccion coleccion = clientesoap1.obtenerListado();
+
+		if (coleccion.getPeliculas() == null) {
+			System.out.println("pasa por aqui");
+			System.out.println(coleccion.getMensaje());
+
+		} else {
+			for (Pelicula c : coleccion.getPeliculas()) {
+
+				System.out.println(c.getTitulo());
+
+			}
+		}
+
 	}
 
 }
